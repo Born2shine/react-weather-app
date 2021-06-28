@@ -61,10 +61,15 @@ const Home = () => {
                 </div>
               </aside>
               <aside className="right-aside">
-                 <div className="hero-icons">
-                     <span className={`celcius-icon ${unit === 'C' ? 'dark-bg' : ''}`} onClick={() => getUnit('C')}> <sup>o</sup>C</span>
-                     <span className={`fahrenheit-icon ${unit === 'F' ? 'dark-bg' : ''}`} onClick={() => getUnit('F')}> <sup>o</sup>F</span>
-                 </div>
+                  {
+                      !loading && (
+                        <div className="hero-icons">
+                            <span className={`celcius-icon ${unit === 'C' ? 'dark-bg' : ''}`} onClick={() => getUnit('C')}> <sup>o</sup>C</span>
+                            <span className={`fahrenheit-icon ${unit === 'F' ? 'dark-bg' : ''}`} onClick={() => getUnit('F')}> <sup>o</sup>F</span>
+                        </div>
+                      )
+                  }
+                
                  <section className="cards">
                      <WeatherCard/>
                  </section>
